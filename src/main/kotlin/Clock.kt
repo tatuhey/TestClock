@@ -39,14 +39,16 @@ class Clock constructor (hour: Int = 0, minute: Int = 0, second: Int = 0){
                 else -> value
             }
         }
+    var day: String = ""
+
     init{
         this.hour = hour
         this.minute = minute
         this.second = second
     }
-//    constructor(hour, minute, second) : this(hour, minute, second){
-//
-//    }
+    constructor(hour: Int, minute: Int, second: Int, day: String) : this(hour, minute, second){
+        this.day =  day
+    }
 
     fun reset(){
         hour = 0
