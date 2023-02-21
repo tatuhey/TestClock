@@ -1,14 +1,14 @@
 import kotlin.math.min
 
-class Clock constructor (hour: Int = 0, minute: Int = 0, second: Int = 0){
+class Clock() {
 
     var hour: Int = 0
-        get(){
+        get() {
             if (field > 24 || field < 0) println("Wrong hour")
             return field
         }
-        set(value){
-            field = when{
+        set(value) {
+            field = when {
                 value < 0 -> 0
                 value > 24 -> 0
                 else -> value
@@ -16,41 +16,41 @@ class Clock constructor (hour: Int = 0, minute: Int = 0, second: Int = 0){
         }
 
     var minute: Int = 0
-        get(){
+        get() {
             if (field < 0 || field > 60) println("Wrong second")
             return field
         }
-        set(value){
-            field = when{
-                value <0 -> 0
+        set(value) {
+            field = when {
+                value < 0 -> 0
                 value > 60 -> 0
                 else -> value
             }
         }
     var second: Int = 0
-        get(){
+        get() {
             if (field < 0 || field > 60) println("Wrong second")
             return field
         }
-        set(value){
-            field = when{
-                value <0 -> 0
+        set(value) {
+            field = when {
+                value < 0 -> 0
                 value > 60 -> 0
                 else -> value
             }
         }
-    var day: String = ""
 
-    init{
+    init {
         this.hour = hour
         this.minute = minute
         this.second = second
     }
-    constructor(hour: Int, minute: Int, second: Int, day: String) : this(hour, minute, second){
-        this.day =  day
+
+    constructor(hour: Int, minute: Int, second: Int) : this() {
+        this.second = second
     }
 
-    fun reset(){
+    fun reset() {
         hour = 0
         minute = 0
         second = 0
